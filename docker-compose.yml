@@ -1,0 +1,19 @@
+services:
+  android:
+    image: budtmo/docker-android:emulator_14.0
+    container_name: android
+    privileged: true
+    devices:
+      - /dev/kvm:/dev/kvm
+    environment:
+      - EMULATOR_DEVICE=Samsung Galaxy S10
+      - WEB_VNC=true
+      - AUTO_START=true
+      - TZ=Asia/Dhaka
+    ports:
+      - "6080:6080"
+      - "5555:5555"
+    shm_size: 4g
+    volumes:
+      - ./android-data:/home/androidusr
+    restart: unless-stopped

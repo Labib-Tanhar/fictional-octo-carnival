@@ -1,0 +1,21 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "hostRequirements": {
+    "cpus": 4,
+    "memory": "16gb",
+    "storage": "32gb"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+  "forwardPorts": [6080, 5555],
+  "portsAttributes": {
+    "6080": {
+      "label": "Android 17 Screen",
+      "onAutoForward": "openBrowser"
+    },
+    "5555": {
+      "label": "ADB"
+    }
+  }
+}
